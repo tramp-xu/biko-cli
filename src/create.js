@@ -16,10 +16,10 @@ let create = async (ProjectName) => {
   } else {
     notExistFold(ProjectName).then(() => {
       prompt().then(answer => {
-        if (answer.frame === 'react') {
-          console.log(symbol.warning, chalk.yellow('react模板还在路上'))
-          process.exit(1)
-        }
+        // if (answer.frame === 'react') {
+        //   console.log(symbol.warning, chalk.yellow('react模板还在路上'))
+        //   process.exit(1)
+        // }
 
         let loading = ora('模板下载中...')
         loading.start('模块下载中...')
