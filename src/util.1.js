@@ -19,26 +19,49 @@ let notExistFold = async (name) => {
 const prompList = [
   {
     type: 'list',
-    name: 'frame',
-    message: '请选择框架',
-    choices: ['Vue', 'React']
+    name: 'env',
+    message: '请选择环境(客户端/服务端)',
+    choices: ['Js', 'Node']
   },
   {
     type: 'list',
-    name: 'platform',
-    message: '请选择平台',
-    choices: ['PC', 'Mobile'],
+    name: 'nodeFrame',
+    message: '请选择框架',
+    choices: ['Koa', 'Express'],
     when: (answer) => {
-      return answer.frame === 'Vue'
+      return answer.env === 'Node'
+    }
+  },
+  {
+    type: 'confirm',
+    name: 'jwt',
+    message: '是否使用 jwt'
+  },
+  {
+    type: 'list',
+    name: 'frame',
+    message: '请选择框架',
+    choices: ['Vue', 'React'],
+    when: (answer) => {
+      return answer.env === 'Js'
     }
   },
   {
     type: 'list',
-    name: 'platform',
-    message: '请选择平台',
-    choices: ['PC'],
+    name: 'frame',
+    message: '请选择 UI 框架',
+    choices: ['ElementUI', 'Vant'],
     when: (answer) => {
-      return answer.frame === 'React'
+      return answer.env === 'Js' && answer.frame === 'Vue'
+    }
+  },
+  {
+    type: 'list',
+    name: 'frame',
+    message: '请选择 UI 框架',
+    choices: ['Ant-Design'],
+    when: (answer) => {
+      return answer.env === 'Js' && answer.frame === 'React'
     }
   },
   {

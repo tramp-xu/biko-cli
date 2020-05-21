@@ -26,15 +26,16 @@ let create = async (ProjectName) => {
 
         // 根据选择的框架选择模板下载地址
         let Api = '';
-        switch (answer.frame) {
-          case 'Vue':
-            Api = 'direct:https://github.com/For-Article/vue-temlate.git';
-            break;
-          case 'React':
-            Api = 'direct:https://github.com/LuoYangYY/react-template.git';
-            break;
-          default:
-            break;
+        if (answer.frame === 'React') {
+          Api = 'direct:https://github.com/LuoYangYY/react-template.git';
+        }
+
+        if (answer.frame === 'Vue') {
+          if (answer.platform === 'PC') {
+            Api = 'direct:https://github.com/PanJiaChen/vue-admin-template.git'
+          } else if (answer.platform === 'Mobile') {
+            Api = 'direct:https://github.com/tramp-xu/vant-mobile-template.git'
+          }
         }
 
         downloadTemplate(ProjectName, Api)
