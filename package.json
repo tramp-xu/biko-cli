@@ -1,6 +1,6 @@
 {
   "name": "biko-cli",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "biko 脚手架",
   "main": "main.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "biko-cli": "^1.0.6",
     "chalk": "^3.0.0",
     "commander": "^5.0.0",
     "css-loader": "^3.4.2",
